@@ -4,7 +4,7 @@ const MEntry = () => {
     return (        
         <tr className=" bg-lwBlack w-full">
             <td className="mEntryText">1</td>
-            <td className="mEntryID" ><Link href="/profile"><div>f01662887</div></Link></td>
+            <td className="mEntryID" ><Link href="/detail"><div>f01662887</div></Link></td>
             <td className="mEntryText">U.S.A.</td>
             <td className="mEntryText">43.39 PiB</td>
             <td className="mEntryText">43.91 PiB</td>

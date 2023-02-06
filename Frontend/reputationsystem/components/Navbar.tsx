@@ -10,7 +10,7 @@ const Navbar = () => {
                     <ul className="flex flex-grow justify-end items-end text-center gap-6 space-x-[100px] pr-[150px]">
                         <li className="headerLink"><Link href="/"><p>Ranking</p></Link></li>
                         <li className="headerLink"><Link href="/profile"><p>Profile</p></Link></li>
-                        <li className="headerLink"><Link href="/faq"><p>FAQ</p></Link></li>
+                        <li className="headerLink"><Link href="/faq"><p>Info</p></Link></li>
                     </ul>
                 </div>     
         </nav>

@@ -49,4 +49,16 @@
     .mEntryScore{
         @apply text-mainBlue font-bold text-[14px] w-1/12 px-3 text-center h-full align-middle  ;
     }
+    .dataRect{
+        @apply text-center text-white bg-nearBlack rounded-2xl p-[30px] mx-2 my-7 border-mainBlue border-2 flex flex-row;
+    }
+    .dataRectB{
+        @apply text-center text-white bg-mainBlue rounded-2xl p-[30px] mx-2 my-7 border-mainBlue border-2 flex flex-row;
+    }
+    .dataRectE{
+        @apply text-center text-white p-[30px] mx-2 my-5 flex flex-col;
+    }
+    .timeFilter{
+        @apply text-center text-white p-1 bg-nearBlack border-mainBlue grow border-2 text-sm align-middle;
+    }
 }

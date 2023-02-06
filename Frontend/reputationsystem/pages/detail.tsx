@@ -1,6 +1,6 @@
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-const Profile = () => {
+const Detail = () => {
     return ( 
         <div>
             <Navbar />
@@ -40,12 +40,8 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-1/3 h-full bg-lwBlack flex flex-col">                    
-                        <div className=" px-[150px] my-5 items-center">
-                            <div className="rounded-[40px] bg-gradient-to-r from-mainBlue to-green text-center">
-                                <div className=" text-nearBlack text-xl font-bold whitespace-nowrap py-2">Claim NFT</div>
-                            </div>        
-                        </div>    
+                    <div className="w-1/3 h-full bg-lwBlack flex flex-col">
+                        <div className="text-center text-mainBlue text-[45px] font-bold h-1/4">Badges</div>
                         <div className="flex flex-row h-3/4 place-content-stretch">
                             <img src="/bagdeEmpty.png" alt="" className="p-0 grow relative w-1/4 object-contain px-5"/>
                             <img src="/bagdeEmpty.png" alt="" className="pb-[80px] grow relative w-2/5 object-contain px-5"/>
@@ -101,4 +97,4 @@ const Profile = () => {
      );
 }
  
-export default Profile;
+export default Detail;
