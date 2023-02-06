@@ -61,4 +61,13 @@
     .timeFilter{
         @apply text-center text-white p-1 bg-nearBlack border-mainBlue grow border-2 text-sm align-middle;
     }
+    .headerInfo{
+        @apply text-white text-xl font-bold mt-5;
+    }
+    .paragraphInfo{
+        @apply text-white text-base mt-5;
+    }
+    .paragraphIndex{
+        @apply text-white text-lg font-bold mt-5;
+    }
 }
