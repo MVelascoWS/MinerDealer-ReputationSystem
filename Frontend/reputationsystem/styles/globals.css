@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-nearBlack;
+    }
+}
+
+/* custom classNames*/
+@layer components {
+    .headerLink{
+        @apply cursor-pointer  text-sm font-bold text-nearBlack transition duration-300 hover:text-[#0090FF];
+    }
+    .tableHeader{
+        @apply px-[160px] w-full gap-2 flex flex-row justify-start items-center mb-[21] ml-[158];
+    }
+    .tableContainer{
+        @apply px-[160px] w-full mt-10;
+    }
+    .tableEntry{
+        @apply w-[40px] h-[18px] text-white text-base text-center whitespace-nowrap;
+    }
+    .tableMetric{
+        @apply text-white text-[13px] w-1/12 px-3 text-right  h-full align-middle ;
+    }
+    .tableIsoMetric{
+        @apply text-white text-[13px] w-1/12 px-3 text-center  h-full align-middle ;
+    }
+    .arrowImg{
+        @apply w-[14px] min-w-0 h-[8px] min-h-0;
+    }
+    .arrowFilter{
+        @apply gap-[15px] flex flex-col align-middle place-content-center py-2;
+    }
+    .comboContent{
+        @apply flex flex-row-reverse gap-2 align-middle content-center place-content-evenly;
+    }
+    .metricText{
+        @apply items-center inline-flex align-middle;
+    }
+    .mEntryText{
+        @apply text-white text-[14px] w-1/12 px-3 text-center h-full align-middle  ;
+    }
+    .mEntryID{
+        @apply text-white font-bold text-[14px] w-1/12 px-3 text-center h-full align-middle  ;
+    }
+    .mEntryScore{
+        @apply text-mainBlue font-bold text-[14px] w-1/12 px-3 text-center h-full align-middle  ;
+    }
+}
