@@ -1,6 +1,7 @@
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-const Profile = () => {
+
+export default function Profile(){
     return ( 
         <div>
             <Navbar />
@@ -96,9 +97,10 @@ const Profile = () => {
                     </div>
                 </div>
             </div>       
+            <div>
+            
+        </div>
             <Footer />
         </div>
      );
 }
- 
-export default Profile;

@@ -1,41 +1,22 @@
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 import { Bar,Line, Scatter, Bubble, Doughnut } from "react-chartjs-2";
-import { GetServerSideProps } from "next";
-interface SPDetail{
-    data:{
-        miner: string
-        score: number
-        rank: number
-        DealsPass: number
-        DealsNoPass : number
-        FBPass      : number
-        FBNoPass    : number
-        FPPass      : number
-        FPNoPass    : number
-        AFBPass     : number
-        AFBNoPass   : number
-        AFPPass     : number
-        AFPNoPass   : number
-        TotalRowPower: string
-        TotalAdjustedPower: string
-    }[]
+export const getStaticPaths = async()=>{
+    const res = await fetch("https://demo6402633.mockable.io/deals");
+    const data = await res.json();
+
+    const paths = data.map(SPs =>{
+        return{
+            params: {id: SPs.miner.toString()}
+        }
+    })
+
+    return{
+        paths,
+        fallback: false
+    }
 }
 
-export const getServerSideProps: GetServerSideProps = async() =>{
-    const res = await fetch("https://api.euro-salud.com/api/deals/getDeals/t01000");
-    const data = await res.json();
-  
-    return {
-        props:{
-            data
-        }
-    }
-  }
-
-  export default function Detail({data}:SPDetail)
-  {
-    const dataG = {
+const Details = () => {
+    const data = {
         backgroundColor:[
             "rgb(2,88,255)",
             "rgb(249,151,0)",
@@ -57,55 +38,44 @@ export const getServerSideProps: GetServerSideProps = async() =>{
             },
         ],
     };
-    const options ={
-        elements:{
-            arc:{
-                weight:0.5,
-                borderWidth: 3,
-            },
-        },
-        cutout: 150,
-    };
     return ( 
         <div>
-            <Navbar />
+          
             <div className="flex flex-col gap-4 px-[160px] w-full h-[700px] mt-5">                
                 <div className="flex flex-row grow gap-4 w-full h-1/2">
                     <div className="flex flex-row w-2/3 h-full bg-lwBlack">
                         <div className="w-2/5">
                             <img src="/FVMGraph.png" alt="" className="left-4 relative h-full object-cover"/>
                         </div>
-                        {data.map(({miner, score, rank, TotalRowPower, TotalAdjustedPower}) =>(
                         <div className="w-3/5 grid grid-cols-2 gap-y-2 gap-x-0 place-content-center my-2 py-2 px-2">
                             <div className="dataRectE p-5" >
                                 <div className="flex flex-col w-3/5 justify-center">
-                                    <div className="text-left text-mainBlue text-[45px] font-bold">{miner}</div>
+                                    <div className="text-left text-mainBlue text-[45px] font-bold">f01662887</div>
                                     <div className= "text-left text-white text-[20px]">Miner ID</div>
                                 </div>
                             </div>
                             <div className="dataRectB p-2">
                                 <img src="/score.png" alt="" className="relative object-contain w-2/5 px-5"/>
                                 <div className="flex flex-col w-3/5 justify-center">
-                                    <div className="text-white text-[45px] font-bold">{score}</div>
+                                    <div className="text-white text-[45px] font-bold">100</div>
                                     <div className="text-white text-[20px]">Score</div>
                                 </div>
                             </div>
                             <div className="dataRect p-2">
                                 <img src="/rank.png" alt="" className="relative object-contain w-2/5 px-5"/>
                                 <div className="flex flex-col w-3/5 justify-center">
-                                    <div className="text-white text-[45px] font-bold">{rank}</div>
+                                    <div className="text-white text-[45px] font-bold">1</div>
                                     <div className="text-white text-[20px]">Rank</div>
                                 </div>
                             </div>
                             <div className="dataRect p-2">
                                 <img src="/capacity.png" alt="" className="relative object-contain w-2/5 px-5"/>
                                 <div className="flex flex-col w-3/5 justify-center">
-                                    <div className="text-white text-[40px] font-bold">{TotalRowPower}</div>
+                                    <div className="text-white text-[45px] font-bold">1234</div>
                                     <div className="text-white text-[20px]">Capacity</div>
                                 </div>
                             </div>
                         </div>
-                        ))}
                     </div>
                     <div className="w-1/3 h-full bg-lwBlack flex flex-col">
                         <div className="text-center text-mainBlue text-[45px] font-bold h-1/4">Badges</div>
@@ -120,11 +90,10 @@ export const getServerSideProps: GetServerSideProps = async() =>{
                 <div className="flex flex-row grow gap-0 w-full h-1/2">
                     <div className="w-full h-full bg-lwBlack flex flex-row">
                         <div className="w-1/2 flex flex-row">
-                        {data.map(({DealsPass, DealsNoPass}) =>(
                             <div className="w-1/3 flex flex-col px-5">
                                 <div className="grow">
                                     <div className="text-left text-white text-[30px] ">Total Deals</div>
-                                    <div className="text-left text-white text-[30px] ">{DealsNoPass+DealsPass}</div>
+                                    <div className="text-left text-white text-[30px] ">1000</div>
                                 </div>
                                 <div className="grow-0 bottom-0">
                                     <div className="flex flex-row mb-2">
@@ -137,15 +106,12 @@ export const getServerSideProps: GetServerSideProps = async() =>{
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                            <div className="w-2/3">
-                            
-                            </div>
+                            <div className="w-2/3"></div>
                         </div>
                         <div className="w-1/2 flex flex-col">
                             <div className="h-1/4 text-center text-white text-[30px] ">Linear</div>
                             <div className="h-2/4">
-                            
+                                <Doughnut data={data} width={100} height={40} options={options}/>
                             </div>
                             <div className="h-1/4">
                                 <div className="h-8 flex flex-row w-full px-10">
@@ -163,7 +129,9 @@ export const getServerSideProps: GetServerSideProps = async() =>{
                     </div>
                 </div>
             </div>       
-            <Footer />
+            
         </div>
      );
 }
+ 
+export default Details;
