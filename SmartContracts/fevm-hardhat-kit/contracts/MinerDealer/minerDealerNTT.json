@@ -1,0 +1,80 @@
+{    
+    "name": "Reputation Cert Miner Dealer",
+    "image": "ipfs://QmZj1ZiBrYGUzRxPaNBj3Sb12F2MiN51NyoQ86JGiXWSTH.png",
+    "description": "This certificates your performance on Filecoin Network.",
+    "attributes": [      
+      {
+        "trait_type": "score",
+        "display_type": "number",
+        "value": "84" 
+      },
+      {
+        "trait_type": "rank",
+        "display_type": "number",
+        "value": 1
+      },
+      {
+        "trait_type": " DealsPass",
+        "display_type": "number",
+        "value": 34
+      },
+      {
+        "trait_type": "DealsNoPass",
+        "display_type": "number",
+        "value": 12
+      },
+      {
+        "trait_type": "FBPass",
+        "display_type": "number",
+        "value": 25
+      },
+      {
+        "trait_type": "FBNoPass",
+        "display_type": "number",
+        "value": 5
+      },
+      {
+        "trait_type": "FPPass",
+        "display_type": "number",
+        "value": 24
+      },
+      {
+        "trait_type": "FPNoPass",
+        "display_type": "number",
+        "value": 6
+      },
+      {
+        "trait_type": "AFBPass",
+        "display_type": "number",
+        "value": 29
+      },
+      {
+        "trait_type": "AFBNoPass",
+        "display_type": "number",
+        "value": 1
+      },
+      {
+        "trait_type": "AFPPass",
+        "display_type": "number",
+        "value": 29
+      },
+      {
+        "trait_type": "AFPNoPass",
+        "display_type": "number",
+        "value": 1
+      },
+      {
+        "trait_type": "TotalRowPower",
+        "display_type": "string",
+        "value": "1411 GiB"
+      },
+      {
+        "trait_type": "TotalAdjustedPower",
+        "display_type": "string",
+        "value": "1.38 TiB"
+      }
+    ],
+    "properties": {
+        "collection":  "Genesis Collection"
+    }
+  }
